@@ -1,0 +1,44 @@
+body{
+    background-image: url(../img/background.jpg);
+    color: #D3D3D3;
+    font-family: Verdana;
+}
+
+.poster_container,
+.movieDetails{
+    width: 1155px;
+    margin: auto;
+}
+
+.poster_container img{
+    border: 5px solid #8F7383;;
+    width: 214px;
+    height: 310px;
+    opacity: 0.5;
+    float: left;
+    display: block;
+    overflow: hidden;
+    
+}
+
+.poster_container img:hover{
+    
+    opacity: 1;
+}
+
+.movieDetails li{
+    list-style-type: none;
+}
+
+@font-face {
+    font-family: "farewell";
+    src: url('fonts/FarewellProRegular.ttf');
+}
+
+
+h1{
+    font-family: farewell;
+    font-weight: normal;
+    text-align: center;
+    color: #8F7383;
+}

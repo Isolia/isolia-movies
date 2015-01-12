@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Isolia Movies</h1>
+    <div class="poster_container">
+    {% for movie in movies %}
+        <a href="{{ path('movieDetails', {'id': movie.id}) }}" class="movie">
+            <img src="{{ asset('img/small/' ~ movie.imbId ~ '.jpg') }}"/><!-- 
+        --></a>
+    {% endfor %}
+    </div>
+{% endblock %}
+
+{% block title %}
+    Liste des films
+{% endblock title %}

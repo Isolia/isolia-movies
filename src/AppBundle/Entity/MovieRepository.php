@@ -12,4 +12,11 @@ use Doctrine\ORM\EntityRepository;
  */
 class MovieRepository extends EntityRepository
 {
+    public function countAll(){
+        $query= $this->createQueryBuilder("m")
+                ->select("COUNT(m)")
+                ->getQuery();
+        $count = $query->getSingleScalarResult();
+        return $count;
+    }
 }

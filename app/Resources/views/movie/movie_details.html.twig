@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="movieDetails"
+         <h1>{{movie.title}}</h1><br/>
+        <img src="{{movie.poster}}"
+
+        <ul>
+            <li>Année de sortie : {{movie.year}}</li>
+            <li>Note : {{movie.rating}}</li>
+            <li>Nombre de vote : {{movie.votes}}</li>
+            {#<li>Date de sortie : {{movie.released}}</li>#}
+            <li>Genre : {{movie.genres}}</li>
+            <li>Réalisateurs : {{movie.directors}}</li>
+            <li>Scénaristes : {{movie.writers}}</li>
+            <li>Acteurs : {{movie.actors}}</li>
+            <li>Origine : {{movie.countries}}</li>      
+        </ul>
+        <p>Synopsis{{movie.plot}}</p>
+    </div>
+{% endblock %}
+
+{% block title %}
+    Film | {{ movie.title }}
+{% endblock title %}
