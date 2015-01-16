@@ -10,6 +10,24 @@
         
     </head>
     <body>
+        <div class="connect_header">
+            <nav class="connect">
+               
+                <ul>
+                {% if app.user %}
+                    <li> Bonjour {{app.user.username}} ! </li>
+                    | 
+                    <li><a href="{{ path('logout')}}"> Se deconnecter </a></li>
+                {%else %}
+                     <li> <a href="{{ path('login')}}"> Se connecter </a></li> 
+                    |
+                    <li> <a href="#"> Mot de passe oublié </a></li> 
+                    |
+                    <li> <a href="{{ path('register')}}"> Créer un compte </a></li>
+                {% endif %}
+                </ul>
+            </nav>
+        </dvi>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

@@ -14,7 +14,7 @@ use AppBundle\Form\RegistrationType;
 class UserController extends Controller
 {
     /**
-     * @Route("/login", name="login_route")
+     * @Route("/login", name="login")
      */    
     public function loginAction(Request $request){
         $session = $request->getSession();
@@ -115,4 +115,22 @@ class UserController extends Controller
         
         return $this->render('user/register.html.twig', $params);
     }
+    
+     /**
+    * @Route("/test-email", name="testEmail")
+    */
+    public function testAction(){
+        $username = "yo";
+        $message = \Swift_Message::newInstance()
+             ->setCharset("utf-8")
+            ->setSubject('Hello Email')
+            ->setFrom(array('xlapinoux@hotmail.com' => "Pipou P"))
+            ->setTo('guibertch@gmail.com')
+            ->setBody($this->renderView("email/forgot_password_email.html.twig", array("username" => $username)), "text/html")
+        ;
+    $this->get('mailer')->send($message);
+    
+    return $this->render("user/lost-password-check-email.html.twig");
+    }
 }
+ 

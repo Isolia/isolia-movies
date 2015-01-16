@@ -1,22 +1,28 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="movieDetails"
-         <h1>{{movie.title}}</h1><br/>
-        <img src="{{movie.poster}}"
+    <div class="movieDetails">
+         <h1>{{ movie.title }}</h1><br/>
+         <div class="bckMovie">
+            <img class="poster" src="{{movie.poster}}">
 
-        <ul>
-            <li>Année de sortie : {{movie.year}}</li>
-            <li>Note : {{movie.rating}}</li>
-            <li>Nombre de vote : {{movie.votes}}</li>
-            {#<li>Date de sortie : {{movie.released}}</li>#}
-            <li>Genre : {{movie.genres}}</li>
-            <li>Réalisateurs : {{movie.directors}}</li>
-            <li>Scénaristes : {{movie.writers}}</li>
-            <li>Acteurs : {{movie.actors}}</li>
-            <li>Origine : {{movie.countries}}</li>      
-        </ul>
-        <p>Synopsis{{movie.plot}}</p>
+            <ul>
+                <li><span class="movieStyle">Année de sortie : </span>{{movie.year}}</li>
+                <li><span class="movieStyle">Note : </span>{{movie.rating}}</li>
+                <li><span class="movieStyle">Nombre de vote : </span>{{movie.votes}}</li>
+                <li><span class="movieStyle">Date de sortie : </span>{{movie.released|date('d F Y')}}</li>
+                <li><span class="movieStyle">Genre : </span>{{movie.genres}}</li>
+                <li><span class="movieStyle">Réalisateurs : </span>{{movie.directors}}</li>
+                <li><span class="movieStyle">Scénaristes : </span>{{movie.writers}}</li>
+                <li><span class="movieStyle">Acteurs : </span>{{movie.actors}}</li>
+                <li><span class="movieStyle">Origine : </span>{{movie.countries}}</li>
+                <br/>
+                <li><span class="movieStyle">Synopsis : </span>{{movie.plot}}</li>
+            </ul>
+                <a class="watchlist" href="#"><img src="{{asset ("img/heart.png")}}"> Rajouter {{movie.title}} à ma WatchList ! </a>
+         </div>
+        <br/><br/>
+        <div class="return"><a href="{{ path('listMovies')}}"> Retourner à la liste de films </a></div>
     </div>
 {% endblock %}
 

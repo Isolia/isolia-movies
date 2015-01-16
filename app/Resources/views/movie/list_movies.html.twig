@@ -1,13 +1,33 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Isolia Movies</h1>
+    <h1>Isolia's Movies</h1>
     <div class="poster_container">
     {% for movie in movies %}
         <a href="{{ path('movieDetails', {'id': movie.id}) }}" class="movie">
             <img src="{{ asset('img/small/' ~ movie.imbId ~ '.jpg') }}"/><!-- 
         --></a>
+        
     {% endfor %}
+    </div>
+    <br/>
+    <div class="pagination">
+        {# n'affiche le lien que s'il y a réellement une page précédente... #}
+        
+        {% if currentPage > 1 %}
+            <a href="{{ path('listMovies', {'page': currentPage-1 }) }}" title="Page précédente"><- Films précédents</a> | 
+        {% endif %}
+        
+        Affichage des films # {{ (currentPage-1)*numPerPage+1 }} à #
+        {% if numPerPage*currentPage>moviesNumber %}
+            {{ moviesNumber }}
+        {% else %}
+            {{ numPerPage*currentPage }}
+        {% endif %}
+        
+        {% if currentPage < maxPages %}
+        | <a href="{{ path('listMovies', {'page': currentPage+1 }) }}" title="Page suivante">Films suivants -></a>
+        {% endif %}
     </div>
 {% endblock %}
 

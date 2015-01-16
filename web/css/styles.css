@@ -1,28 +1,30 @@
 body{
     background-image: url(../img/background.jpg);
-    color: #D3D3D3;
+    color: #8F7383;
     font-family: Verdana;
+    margin :0;
 }
 
+a{
+    text-decoration: none;
+}
 .poster_container,
 .movieDetails{
-    width: 1155px;
+    width: 1120px;
     margin: auto;
+    overflow: hidden; 
 }
 
 .poster_container img{
-    border: 5px solid #8F7383;;
+    border: 5px solid #8F7383;
     width: 214px;
     height: 310px;
     opacity: 0.5;
     float: left;
     display: block;
-    overflow: hidden;
-    
 }
 
 .poster_container img:hover{
-    
     opacity: 1;
 }
 
@@ -35,10 +37,98 @@ body{
     src: url('fonts/FarewellProRegular.ttf');
 }
 
+@font-face {
+    font-family: "cabana";
+    src: url('fonts/Cabana-Regular.otf');
+}
 
 h1{
-    font-family: farewell;
+    font-size: 100px;
+    font-family: cabana;
     font-weight: normal;
     text-align: center;
     color: #8F7383;
+    padding: 10px 0 0 0;
+    margin : 0 0 -15px 0;
+}
+
+.pagination{
+    text-align: center;
+}
+
+.watchlist{
+   color: #1abc9c; 
+}
+
+.watchlist:hover{
+    color: #16a085;
+}
+
+.connect a,
+.pagination a{
+    color: #8F7383;
+    text-decoration: none;
+}
+
+.pagination a:hover{
+    color: #6B5D66;
+}
+
+.watchlist:active,
+.pagination a:active{
+    color: #F2D1E6;
+}
+
+.connect_header{
+    background-color: #8F7383;
+    height: 40px;
+}
+
+.connect {
+    color: white;
+    width: 1120px; 
+    margin:auto;
+    text-align: right;
+    line-height: 40px;
+}
+
+.connect a{
+    color: white;
+}
+
+.connect a:hover{
+    color: #6B5D66;
+}
+
+.connect ul{
+    margin: -1px;
+}
+
+.connect li{
+    display: inline-block;
+    list-style: none;
+}
+
+.movieStyle{
+    color: #16a085;
+}
+
+.movieStyle h1{
+    font-size: 25px;
+    font-family: cabana;
+}
+
+.return{
+    font-size: 10px;
+    text-align: right;
+}
+
+.bckMovie{
+    background-color: #ecf0f1;
+    border: 2px solid #8F7383;
+    padding: 10px 10px 15px;
+}
+
+.movieDetails .poster{
+    float: right;
 }
